@@ -64,8 +64,7 @@ fi
 
 if [ -n "${KVM_ERR}" ]; then
   if [ "$ARCH" == "amd64" ]; then
-    error "KVM acceleration not detected ${KVM_ERR}, see the FAQ about this."
-    [[ "${DEBUG}" != [Yy1]* ]] && exit 88
+    echo "KVM acceleration not detected ${KVM_ERR}, see the FAQ about this."
   fi
 else
   KVM_OPTS=",accel=kvm -enable-kvm -cpu host"
